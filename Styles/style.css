@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(220, 220, 220);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.container input {
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.container input,
+.container input::placeholder {
+    color: #333;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.btn:hover {
+    background: rgb(250, 250, 250);
+}
+
+.btn::before {
+    content: "Copied";
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 5px;
+    display: none;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    right: 50%;
+    transform: translateX(50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    display: none;
+
+}
+
+.password-div.active .btn::before,
+.password-div.active .btn::after {
+    display: block;
+}
